@@ -1,10 +1,14 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import logo from "@/assets/logo.png";
 import HeaderBackground from "./header-background";
+import { usePathname } from "next/navigation";
+import NavLink from "../shared/NavLink";
 
 const MainHeader = () => {
+  const path = usePathname();
   return (
     <>
       <HeaderBackground />
@@ -17,10 +21,24 @@ const MainHeader = () => {
         <nav>
           <ul className="flex gap-10 items-center text-lg font-medium">
             <li>
-              <Link href={"/meals"}>Meals</Link>
+              <NavLink
+                href={"/meals"}
+                className={
+                  path === "/meals" ? "text-amber-300 shadow-2xl " : ""
+                }
+              >
+                Meals
+              </NavLink>
             </li>
             <li>
-              <Link href={"/community"}>Community</Link>
+              <NavLink
+                href={"/community"}
+                className={
+                  path === "/community" ? "text-amber-300 shadow-2xl" : ""
+                }
+              >
+                Community
+              </NavLink>
             </li>
           </ul>
         </nav>
