@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import logo from "@/assets/logo.png";
-import HeaderBackground from "./header-background";
+import HeaderBackground from "./HeaderBackground";
 import { usePathname } from "next/navigation";
 import NavLink from "../shared/NavLink";
 
